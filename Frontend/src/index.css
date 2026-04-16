@@ -20,3 +20,32 @@ a.active hr {
   font-weight: 400;
   font-style: normal;
 }
+
+/* Carousel Styles */
+.rootCarousel {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.dragContainer {
+  transform-style: preserve-3d;
+}
+
+.spinContainer {
+  transform-style: preserve-3d;
+}
+
+.images {
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.ground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+  transform: rotateX(90deg) translateZ(-250px);
+  opacity: 0.3;
+}
