@@ -28,7 +28,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full h-[55vh] overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+    <div className="relative w-full h-[65vh] overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       {/* Carousel Container */}
       <div className="relative w-full h-full flex items-center justify-center">
         {slides.map((slide, index) => (
