@@ -129,7 +129,7 @@ const ThreeJsCanvas = ({ scene }) => {
     };
   }, [scene]);
 
-  return <div ref={mountRef} className="w-full h-full max-w-[600px] max-h-[600px]" />;
+  return <div ref={mountRef} className="threejs-canvas-mount w-full h-full max-w-[600px] max-h-[600px]" />;
 };
 
 export default ThreeJsCanvas;

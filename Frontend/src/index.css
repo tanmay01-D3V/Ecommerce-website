@@ -1,33 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
 @import "tailwindcss";
 
-a.active hr {
-    display: block;
+* {
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-    font-family: Bebas Neue;
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #fbf9f9;
+  color: #1b1c1c;
 }
 
-.bebas-neue-regular {
-  font-family: "Bebas Neue";
-  font-weight: 400;
-  font-style: normal;
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
-.anton-regular {
-  font-family: "Anton";
-  font-weight: 400;
-  font-style: normal;
+
+/* Remove scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
+/* Smooth transitions */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Focus states */
+input:focus,
+select:focus {
+  outline: none;
 }
 
 /* Carousel Styles */
 .rootCarousel {
   perspective: 1000px;
-  transform-style: preserve-3d;
-}
-
-.dragContainer {
   transform-style: preserve-3d;
 }
 

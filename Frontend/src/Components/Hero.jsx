@@ -28,13 +28,13 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full h-[65vh] overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+    <div className="hero-outer-container relative w-full h-[65vh] overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       {/* Carousel Container */}
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div className="hero-carousel relative w-full h-full flex items-center justify-center">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-all duration-700 ease-in-out transform ${
+            className={`hero-slide absolute inset-0 transition-all duration-700 ease-in-out transform ${
               index === currentSlide
                 ? "translate-x-0 opacity-100"
                 : index < currentSlide
@@ -42,9 +42,9 @@ const Hero = () => {
                 : "translate-x-full opacity-0"
             }`}
           >
-            <div className="flex w-full h-full">
+            <div className="hero-slide-layout flex w-full h-full">
               {/* Left Half - 3D Canvas (only for last slide) */}
-              <div className="w-[40%] h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 px-6">
+              <div className="hero-canvas-wrapper w-[40%] h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 px-6">
                 {slide.scene ? (
                   <div className="w-full max-w-[600px] h-full flex items-center justify-center">
                     <ThreeJsCanvas scene={slide.scene} />
@@ -58,7 +58,7 @@ const Hero = () => {
               </div>
 
               {/* Right Half - Content */}
-              <div className="w-[60%] h-full flex flex-col justify-center items-center p-12 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900">
+              <div className="hero-content-wrapper w-[60%] h-full flex flex-col justify-center items-center p-12 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900">
                 <div className="text-center max-w-lg">
                   <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
                     {slide.title}
