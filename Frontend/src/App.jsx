@@ -1,32 +1,22 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Home from './Pages/Home'
-import Shop from './Pages/Shop'
-import Product from './Pages/Product'
-import Cart from './Pages/Cart'
-import Collection from './Pages/Collection'
-import Contact from './Pages/Contact'
-import Login from './Pages/Login'
-import Orders from './Pages/Orders'
-import PlaceOrder from './Pages/PlaceOrder'
-import About from './Pages/About'
+import Navbar from "./components/Navbar";
+import Home from "./Pages/Home";
+import Contact from "./Pages/Contact";
+import Product from "./Pages/Product";
+import Shop from "./Pages/Shop";
+import Cart from "./Pages/Cart";
 
-const App = () => {
+function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/shop' element={<Shop/>}/>
-      <Route path='/product/:id' element={<Product/>}/>
-      <Route path='/cart' element={<Cart />}/>
-      <Route path='/collection' element={<Collection />}/>
-      <Route path='/contact' element={<Contact/>}/>
-      <Route path='/login' element={<Login/>}/>
-      <Route path='/orders' element={<Orders/>}/>
-      <Route path='/placeorder' element={<PlaceOrder/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='*' element={<h1>404 Not Found</h1>}/>
-    </Routes>
-  )
+    <div>
+      <Navbar />
+
+      <Home />
+      <Product />
+      <Shop />
+      <Cart />
+      <Contact />
+    </div>
+  );
 }
 
-export default App
+export default App;

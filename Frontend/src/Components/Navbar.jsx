@@ -1,67 +1,72 @@
-import React, { useState } from 'react'
-import { assets } from '../assets/frontend_assets/assets'
-import { Link, NavLink } from 'react-router-dom'
+import React from "react";
+import logo from "../assets/Logo.svg";
+import {
+  Search,
+  ShoppingCart,
+  User,
+} from "lucide-react";
 
 const Navbar = () => {
-  const [visible, setVisible] = useState(false);
-
   return (
-    <div className='navbar-container flex items-center justify-between py-2 px-4 sm:px-20 font-medium'>
-        <img src={assets.logo} alt="logo" className='w-24 sm:w-30 h-11 overflow-hidden' />
-        <ul className='nav-links-desktop hidden sm:flex gap-5 text-black text-lg'>
-        <NavLink to='/' className='flex flex-col items-center gap-1'>
-            <p>HOME</p>
-            <hr className='w-2/4 h-[1.5px] border-none bg-black rounded-full hidden' />
-        </NavLink>
-        <NavLink to='/collection' className='flex flex-col items-center gap-1'>
-            <p>COLLECTION</p>
-            <hr className='w-2/4 h-[1.5px] border-none bg-black rounded-full hidden' />
-        </NavLink>
-        <NavLink to='/about' className='flex flex-col items-center gap-1'>
-            <p>ABOUT</p>
-            <hr className='w-2/4 h-[1.5px] border-none bg-black rounded-full hidden' />
-        </NavLink>
-        <NavLink to='/contact' className='flex flex-col items-center gap-1'>
-            <p>CONTACT</p>
-            <hr className='w-2/4 h-[1.5px] border-none bg-black rounded-full hidden' />
-        </NavLink>
-        </ul>
+    <div className="w-full bg-[#f3f3f3] border-t-[6px] border-[#5B21B6] shadow-sm">
+      <div className="w-full px-8 py-5 flex items-center justify-between">
+        
+        {/* LEFT SECTION */}
+        <div className="flex items-center gap-14">
+          
+          {/* LOGO */}
+          <div className="flex items-center gap-3 cursor-pointer">
+            <img src={logo} alt="logo" className="w-8 h-8" />
 
-        <div className='nav-icons-container flex items-center gap-4 sm:gap-6'>
-            <img src={assets.search_icon} alt="search" className='w-5 h-5 cursor-pointer' />
+            <h1 className="text-4xl font-black tracking-tight text-[#1b1b1b]">
+              VYBE
+            </h1>
+          </div>
 
-            <div className='nav-profile-group group relative'>
-                <img className='w-5 h-5 cursor-pointer' src={assets.profile_icon} alt="profile" />
-                <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
-                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded'>
-                        <p className='cursor-pointer hover:text-black'>Profile</p>
-                        <p className='cursor-pointer hover:text-black'>Orders</p>
-                        <p className='cursor-pointer hover:text-black'>Logout</p>
-                    </div>
-                </div>
-            </div>
-            <Link to='/cart' className='relative'>
-                <img src={assets.cart_icon} alt="cart" className='w-5 h-5 cursor-pointer' />
-                <p className='absolute -top-2 -right-2 w-4 h-4 rounded-full bg-black text-white text-xs flex items-center justify-center'>3</p>
-            </Link>
-            <img onClick={() => setVisible(true)} src={assets.menu_icon} alt="menu" className='w-5 h-5 cursor-pointer sm:hidden' />
-
+          {/* NAV LINKS */}
+          <nav className="hidden md:flex items-center gap-12">
+            {["SHOP", "COLLECTIONS", "NEW ARRIVALS", "NETWORK"].map(
+              (item) => (
+                <a
+                  key={item}
+                  href="/"
+                  className="text-[15px] tracking-[2px] font-semibold text-[#1e1e1e] hover:text-[#5B21B6] transition"
+                >
+                  {item}
+                </a>
+              )
+            )}
+          </nav>
         </div>
 
-        <div className={`nav-mobile-sidebar absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
-            <div className='flex flex-col text-gray-600'>
-                <div onClick={() => setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
-                    <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
-                    <p>Back</p>
-                </div>
-                <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/'>HOME</NavLink>
-                <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/collection'>COLLECTION</NavLink>
-                <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/about'>ABOUT</NavLink>
-                <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/contact'>CONTACT</NavLink>
-            </div>
+        {/* RIGHT SECTION */}
+        <div className="flex items-center gap-8">
+          
+          {/* SEARCH BAR */}
+          <div className="hidden lg:flex items-center bg-[#e7e7e7] px-5 py-3 w-[370px]">
+            <Search className="w-5 h-5 text-gray-500" />
+
+            <input
+              type="text"
+              placeholder="SEARCH SPECIFICATIONS"
+              className="bg-transparent outline-none ml-3 text-sm tracking-[2px] placeholder:text-gray-500 w-full"
+            />
+          </div>
+
+          {/* CART */}
+          <div className="flex items-center gap-2 cursor-pointer">
+            <ShoppingCart className="w-7 h-7 text-[#1e1e1e]" />
+            <span className="text-xl font-semibold">(0)</span>
+          </div>
+
+          {/* USER */}
+          <button className="cursor-pointer">
+            <User className="w-7 h-7 text-[#1e1e1e]" />
+          </button>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
