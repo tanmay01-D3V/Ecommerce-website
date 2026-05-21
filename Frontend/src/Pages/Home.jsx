@@ -1,12 +1,29 @@
-import Layout from "../components/Layout";
+import FeaturedCollections from "../Components/Home/FeaturedCollections";
+import HeroCarousel from "../Components/Home/HeroCarousel";
+import NetworkCTA from "../Components/Home/NetworkCTA";
+import NewArrivals from "../Components/Home/NewArrivals";
+import MainLayout from "../Layout/MainLayout";
+
 
 const Home = () => {
   return (
-    <Layout>
-      <div className="p-10 text-4xl font-bold">
-        Home Page
-      </div>
-    </Layout>
+    <MainLayout>
+
+      <HeroCarousel />
+
+      <section id="collections">
+        <FeaturedCollections />
+      </section>
+
+      <section id="new-arrivals">
+        <NewArrivals />
+      </section>
+
+      <section id="network">
+        <NetworkCTA />
+      </section>
+
+    </MainLayout>
   );
 };
 

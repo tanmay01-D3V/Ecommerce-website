@@ -8,7 +8,7 @@ import {
   User,
 } from "lucide-react";
 
-const Navbar = () => {
+const ShopNavbar = () => {
   return (
     <div className="w-full bg-[#f3f3f3] border-t-[6px] border-[#5B21B6] shadow-sm">
       <div className="w-full px-8 py-5 flex items-center justify-between">
@@ -29,7 +29,7 @@ const Navbar = () => {
           </Link>
 
           {/* NAV LINKS */}
-          <nav className="hidden md:flex items-center gap-12 ">
+          <nav className="hidden md:flex items-center gap-12">
 
   {[
     {
@@ -56,7 +56,7 @@ const Navbar = () => {
         key={item.name}
         href={item.path}
         className="
-          text-[20px]
+          text-[15px]
           tracking-[2px]
           font-semibold
           text-[#1e1e1e]
@@ -72,7 +72,7 @@ const Navbar = () => {
       key={item.name}
       to={item.path}
       className="
-        text-[20px]
+        text-[15px]
         tracking-[2px]
         font-semibold
         text-[#1e1e1e]
@@ -119,4 +119,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default ShopNavbar;
