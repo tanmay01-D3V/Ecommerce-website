@@ -1,7 +1,8 @@
 import { ROUTES } from "../constants/routes";
 
 export const routeConfig = [
-  { path: ROUTES.HOME, label: "Home" },
-  { path: ROUTES.SHOP, label: "Shop" },
-  { path: ROUTES.CART, label: "Cart" },
+  { path: ROUTES.SHOP, label: "SHOP" },
+  { path: `${ROUTES.HOME}#collections`, label: "COLLECTIONS" },
+  { path: `${ROUTES.HOME}#new-arrivals`, label: "NEW ARRIVALS" },
+  { path: `${ROUTES.HOME}#network`, label: "NETWORK" },
 ];
